@@ -13,3 +13,16 @@ eureka:
 spring:
   application:
     name: cloud-eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    shutdown:
+      enabled: false
+  metrics:
+    tags:
+      application: "${spring.application.name}"
+
+
+
