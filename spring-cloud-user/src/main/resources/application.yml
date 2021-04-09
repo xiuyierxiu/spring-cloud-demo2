@@ -6,9 +6,6 @@ eureka:
     serviceUrl:
       defaultZone: http://172.18.141.139:18761/eureka/
 
-spring:
-  application:
-    name: cloud-user
 management:
   endpoints:
     web:
@@ -19,3 +16,19 @@ management:
   metrics:
     tags:
       application: "${spring.application.name}"
+
+spring:
+  application:
+    name: cloud-user
+  profiles:
+    active: peer2
+
+---
+spring:
+  profiles: peer1
+
+
+---
+spring:
+  profiles: peer2
+
